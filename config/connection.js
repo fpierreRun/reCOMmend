@@ -8,4 +8,4 @@ const sequelize = new Sequelize('recommend_db', 'username', 'password', {
     port: 3306
 });
 
-module.exports = sequelize
+module.exports = sequelize;
