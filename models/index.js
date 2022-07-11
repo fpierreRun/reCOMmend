@@ -13,8 +13,19 @@ Search.belongsTo(User, {
 Comments.belongsTo(User, {
     foreignKey: 'user_id',
     onDelete: 'SET NULL'
-})
+});
 //comment belongs to search
-Comment.belongsTo(Search, )
-
+Comments.belongsTo(Search, {
+    foreignKey: 'search_id',
+    onDelete: 'SET NULL'
+});
+//user has many comments
+User.hasMany(Comments, {
+    foreignKey: 'user_id',
+});
+//search has one comment
+Search.hasOne(Comments, {
+    foreignKey: 'search_id',
+})
+//
 module.exports = { User, Search, Comments };
