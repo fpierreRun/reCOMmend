@@ -4,11 +4,11 @@ const sequelize = require('../config/connection');
 
 //create user model
 
-class User extends Model {}
+class search extends Model {}
 
 //define table columns and config
 
-User.init(
+search.init(
     {
         //define id column
         id: {
@@ -17,11 +17,10 @@ User.init(
             primaryKey: true,
             autoIncrement: true
         },
-        username: {
+        keyword: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true,
-            
+            unique: true, 
         },
         email: {
             type: DataTypes.STRING,
@@ -30,13 +29,6 @@ User.init(
             validate: {
             isEmail: true
             }
-        },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-            len: [8]
-            }
         }
     },
     {
@@ -44,14 +36,14 @@ User.init(
         //pass in imported sequelize connection(direct connection to database)
         sequelize,
         //dont automatically create createdAt/updatedAt timestamp fields
-        timestamps: false,
+        timestamps: true,
         //don't pluralize name of database table
         freezeTableName: true,
         //use underscores instead of camel-casing (i.e. `comment_text` and not `commentText`)
         underscored: true,
         //make it so model name stays lowercase in database
-        modelName: 'user'
+        modelName: 'keyword'
     },
 );
 
-module.exports = User;
+module.exports = keyword;

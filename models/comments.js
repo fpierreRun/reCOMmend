@@ -4,11 +4,11 @@ const sequelize = require('../config/connection');
 
 //create user model
 
-class User extends Model {}
+class comments extends Model {}
 
 //define table columns and config
 
-User.init(
+comments.init(
     {
         //define id column
         id: {
@@ -17,25 +17,12 @@ User.init(
             primaryKey: true,
             autoIncrement: true
         },
-        username: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            
-        },
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: {
-            isEmail: true
-            }
-        },
-        password: {
+
+        comment: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-            len: [8]
+            len: [100]
             }
         }
     },
@@ -44,14 +31,14 @@ User.init(
         //pass in imported sequelize connection(direct connection to database)
         sequelize,
         //dont automatically create createdAt/updatedAt timestamp fields
-        timestamps: false,
+        timestamps: true,
         //don't pluralize name of database table
         freezeTableName: true,
         //use underscores instead of camel-casing (i.e. `comment_text` and not `commentText`)
         underscored: true,
         //make it so model name stays lowercase in database
-        modelName: 'user'
+        modelName: 'comments'
     },
 );
 
-module.exports = User;
+module.exports = comments;
