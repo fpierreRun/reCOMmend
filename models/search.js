@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
+const { User } = require('../../projects/modules/account_manager/models');
 
 const sequelize = require('../config/connection');
 
@@ -22,28 +23,22 @@ search.init(
             allowNull: false,
             unique: true, 
         },
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: {
-            isEmail: true
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user', key:'id'
             }
         }
     },
     {
-        //table configs go here (https://sequelize.org/v5/manual/models-definition.html#configuration)
-        //pass in imported sequelize connection(direct connection to database)
         sequelize,
-        //dont automatically create createdAt/updatedAt timestamp fields
         timestamps: true,
-        //don't pluralize name of database table
         freezeTableName: true,
-        //use underscores instead of camel-casing (i.e. `comment_text` and not `commentText`)
         underscored: true,
-        //make it so model name stays lowercase in database
         modelName: 'keyword'
     },
 );
+
+    User.hasOne(search);
 
 module.exports = keyword;
