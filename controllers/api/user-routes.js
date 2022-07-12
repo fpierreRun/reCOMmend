@@ -51,14 +51,13 @@ router.get('/:id', (req, res) => {
 });
 
 // POST /api/users
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
     // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234', first_name:'John', last_name:'Doe' }
     User.create({
         username: req.body.username,
         email: req.body.email,
         password: req.body.password,
-        first_name: req.body.first_name,
-        last_name: req.body.last_name
+
     })
     .then(dbUserData => {
         req.session.save(() => {

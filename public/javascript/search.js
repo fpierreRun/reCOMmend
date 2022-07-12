@@ -3,10 +3,7 @@ async function searchFormSubmitHandler(event) {
 
     const query = document.querySelector('#query-box').value.trim();
     const type = document.querySelector('#type-box').value.trim();
-    
-
-    if (username && email && password) {
-        const response = await fetch('https://tastedive.com/api/similar?q=' + query + '&type=' + type + '&info=1&k='+ key)
+    const response = await fetch('https://tastedive.com/api/similar?q=' + query + '&type=' + type + '&info=1&k='+ key)
          // check the response status
         if (response.ok) {
             console.log('success' + response);
@@ -14,10 +11,20 @@ async function searchFormSubmitHandler(event) {
             response.render(searchresults,{
                 results,
             })
+            const responseTwo= await fetch('/api/searches',{
+                method: 'post',
+                body:JSON.stringify({
+                    query                    
+                })
+            })
+            if (responseTwo.ok){
+                console.log('success #2')
+                response.json(responseTwo)
+            }
         } else {
             alert(response.statusText);
         }
-    }
+    
 };
 
 document.querySelector('.search-form').addEventListener('submit', signupFormHandler);

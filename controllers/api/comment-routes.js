@@ -14,11 +14,11 @@ router.get('/', (req, res) => {
 
 
 // expects => {comment_text: "This is the comment", user_id: 1, search_id: 2}
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
     // check the session
     if (req.session) {
         Comment.create({
-            comment_text: req.body.comment_text,
+            comment: req.body.comment,
             search_id: req.body.search_id,
             // use the id from the session
             user_id: req.session.user_id
