@@ -1,6 +1,6 @@
 const User = require('./User');
 const Search = require('./Search');
-const Comments = require('./Comments');
+const Comment = require('./Comment');
 User.hasMany(Search, {
     foreignKey: 'user_id'
 });
@@ -10,22 +10,22 @@ Search.belongsTo(User, {
     onDelete: 'SET NULL'
 });
 //user belongs to comment
-Comments.belongsTo(User, {
+Comment.belongsTo(User, {
     foreignKey: 'user_id',
     onDelete: 'SET NULL'
 });
 //comment belongs to search
-Comments.belongsTo(Search, {
+Comment.belongsTo(Search, {
     foreignKey: 'search_id',
     onDelete: 'SET NULL'
 });
-//user has many comments
-User.hasMany(Comments, {
+//user has many comment
+User.hasMany(Comment, {
     foreignKey: 'user_id',
 });
 //search has one comment
-Search.hasOne(Comments, {
+Search.hasOne(Comment, {
     foreignKey: 'search_id',
 })
 //
-module.exports = { User, Search, Comments };
+module.exports = { User, Search, Comment };

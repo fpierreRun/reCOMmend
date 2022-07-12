@@ -1,15 +1,15 @@
 const { Model, DataTypes } = require('sequelize');
-const { User } = require('../../projects/modules/account_manager/models');
+
 
 const sequelize = require('../config/connection');
 
 //create user model
 
-class search extends Model {}
+class Search extends Model {}
 
 //define table columns and config
 
-search.init(
+Search.init(
     {
         //define id column
         id: {
@@ -35,10 +35,10 @@ search.init(
         timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName: 'keyword'
+        modelName: 'search'
     },
 );
 
-    User.hasOne(search);
 
-module.exports = keyword;
+
+module.exports = Search;

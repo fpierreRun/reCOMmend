@@ -1,14 +1,14 @@
 const { Model, DataTypes } = require('sequelize');
-const { User } = require('../../projects/modules/account_manager/models');
+
 
 const sequelize = require('../config/connection');
 
 
-class comments extends Model {}
+class Comment extends Model {}
 
 //define table columns and config
 
-comments.init(
+Comment.init(
     {
         //define id column
         id: {
@@ -37,9 +37,9 @@ comments.init(
         timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName: 'comments'
+        modelName: 'comment'
     },
 );
 
 
-module.exports = comments;
+module.exports = Comment;
