@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reCOMmend</title>
+  <link rel="stylesheet" href="../stylesheet/style.css">
+</head>
+
+
+<Body>
+   
+      <header>
+        <h1>
+            <a href="/">Just Tech News</a>
+        </h1>
+        <div class="topnav">
+            <a class="active" href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <input type="text" placeholder="Search..">
+            <nav>
+                <button id="logout" class="btn-no-style">logout</button>
+                <a href="/login">login</a>
+            </nav>
+          </div>
+        
+        </header>
+    
+    <ol class="post-list">
+    {{#each posts as |post|}}
+    <li>
+    <article class="post">
+      <div class="title">
+        <a href="{{post.post_url}}" target="_blank">{{post.title}}</a>
+        <span>({{post.post_url}})</span>
+      </div>
+      <div class="meta">
+        {{post.vote_count}} point(s) by {{post.user.username}} on
+        {{post.created_at}}
+        |
+        <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
+      </div>
+    </article>
+    </li>
+    {{/each}}
+    </ol>End of code snippet
+    
+</Body>
