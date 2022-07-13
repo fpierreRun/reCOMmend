@@ -42,10 +42,10 @@ app.get('/searchresults', (req, res) =>{
         .then(response => {
         console.log(response.data)
         
-        res.render('searchresults',{
-            response
+        // res.render('searchresults',{
+        //     response
 
-        })
+        // })
         // res.send('hello')
         }).catch(err => {
         res.send('errr!!!')
