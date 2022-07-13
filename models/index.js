@@ -27,5 +27,5 @@ User.hasMany(Comment, {
 Search.hasOne(Comment, {
     foreignKey: 'search_id',
 })
-//
+
 module.exports = { User, Search, Comment };
