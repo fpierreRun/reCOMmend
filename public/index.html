@@ -5,66 +5,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>reCOMmend</title>
-  <link rel="stylesheet" href="../stylesheet/style.css">
+  <link rel="stylesheet" href="../public/stylesheet/style.css">
 </head>
 
 <body>
-    <header>
-        
-        <nav>
-            <button id="logout" class="btn-no-style">logout</button>
-            <a href="/login">login</a>
-        </nav>
-        
-        </header>
-       
-    <section class="wrapper">
-        <div>
-            <h1>
-                <a href="/">reCOMmend</a>
-            </h1>
-            <h4>Get reommendations on what you like</h4>
-        </div>
-       
+
+   <div class="wrap">
+    <section>
+            <h1>reCOMmend</h1>
+            <h4>Login and view your recommendations</h4>
+            
     </section>
 
     <script src="/javascript/logout.js"></script>
- <!-- Login and account creation section-->
-
+ 
+ <!-- Login  section-->
     <section>
         <form class="login-form">
         <div>
-          <label for="email-login">email:</label>
-          <input type="text" id="email-login" />
+          <input type="text" placeholder="Enter Email" id="email-login" />
         </div>
         <div>
-          <label for="password-login">password:</label>
-          <input type="password" id="password-login" />
+          <input type="password" placeholder="Enter Password" id="password-login" />
         </div>
         <div>
           <button type="submit">login</button>
         </div>
       </form>
       
+
+  </div>
+
+  <!--account creation section-->
+  <div class="wrap section-color" >
+  
+      <script src="/javascript/logout.js"></script>
+ 
       <form class="signup-form">
         <div>
-          <label for="username-signup">username:</label>
-          <input type="text" id="username-signup" />
+          <input type="text" placeholder="Create Username" id="username-signup" />
         </div>
         <div>
-          <label for="email-signup">email:</label>
-          <input type="text" id="email-signup" />
+          
+          <input type="text" placeholder="Enter Email" id="email-signup" />
         </div>
         <div>
-          <label for="password-signup">password:</label>
-          <input type="password" id="password-signup" />
+          
+          <input type="password" placeholder="Create Password" id="password-signup" />
         </div>
         <div>
           <button type="submit">signup</button>
         </div>
       </form>
     </Section>
+
+      <h4 class="h4-color">Get recommendations on what you like by signing up</h4>
       
+
+  </div>
 
     <footer>
         Thanks for visiting!

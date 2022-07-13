@@ -1,9 +1,9 @@
 :root {
-  --primary-color: #071540;
-  --secondary-color: #84D9B1;
-  --tertiary-color: #41BF78;
-  --background1: #2CBF6C;
-  --background2: #F2F2F2;
+    --primary-color: #071540;
+    --secondary-color: #84D9B1;
+    --tertiary-color: #41BF78;
+    --background1: #2CBF6C;
+    --background2: #F2F2F2;
 }
 
 
@@ -12,8 +12,7 @@
   }
   
   body {
-    background-color:var(--secondary-color);
-    
+      background-color:var(--background1);
   }
   
   body, html {
@@ -21,17 +20,37 @@
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-    color: #333;
+    color:var(--secondary-color);
   }
-
-   .wrap {
-    display: flex;
-    justify-content: space-around;
+  
+.container {
+    display:flex;
     align-items: center;
-    font-size: 39px;
-   }
-.section-color {
-background:var(--background2);
+    justify-content: center;
+}
+.search-bar{
+width: 100%;
+max-width: 700px;
+background: var(--background2);
+display: flex;
+align-items: center;
+border-radius: 60px;
+padding: 10px 20px;
+margin-top: 30px ;
+}
+
+.search-bar input{
+background: transparent;
+flex: 1;
+border:0;
+outline: none;
+padding: 5px;
+font-size: 25px;
+color: var(--primary-color);
+}
+
+::placeholder{
+    color:rgb(197, 197, 197);
 }
   a {
     text-decoration: none;
@@ -53,8 +72,6 @@ background:var(--background2);
     transition: background-color .1s;
     cursor: pointer;
     border-radius: 5px;
-    margin-bottom: 20px;
-    
   }
   
   button:hover {
@@ -82,36 +99,34 @@ background:var(--background2);
     min-height: 100px;
   }
   
-  form  div {
+  form > div {
     margin-bottom: 2%;
-    padding: 0px 20px 0px 20px;
   }
   
- form {
-background:white;
-border-radius: 10px;
-box-shadow: 0px 3px 6px #00000029;
- }
+  form label {
+    display: block;
+  }
   
- ::placeholder {
-   color: rgb(197, 197, 197);
- }
   
+  
+  header {
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1%;
+    color: #fff5eb;
+  }
   h1 {
     font-size: 50px;
-    color: white;
+    color:var(--primary-color);
   }
-
 
   header, h4 {
     font-size: 35px;
     color: white;
   }
-
-  .h4-color {
-    color:var(--primary-color)
-      }
-
+  
   main {
     flex: 1;
     padding: 2% 4%;
@@ -202,6 +217,5 @@ box-shadow: 0px 3px 6px #00000029;
     justify-content: center;
     padding: 1%;
     font-size: 100%;
-    background:var(--background2);
   }
 
