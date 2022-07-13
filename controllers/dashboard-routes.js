@@ -10,7 +10,7 @@ router.get('/', withAuth, (req, res) => {
         attributes: [
             'id',
             'keyword',
-            'timestamp'            
+            'user_id'            
         ],
         include: [
             {
@@ -20,12 +20,15 @@ router.get('/', withAuth, (req, res) => {
         ]
     })
     .then(dbSearchData => {
+        debugger;
         // pass a single search history object into the homepage template
         const searchHistory = dbSearchData.map(search => search.get({ plain: true }));
-        res.render('homepage', {
+        console.log(searchHistory)
+        res.render('dashboard', {
             searchHistory,
             loggedIn: req.session.loggedIn
         });
+      
     })
     .catch(err => {
         console.log(err);

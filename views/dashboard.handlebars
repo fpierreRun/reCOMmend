@@ -1,29 +1,50 @@
- <header>
-        <h1>
-            <a href="/">Just Tech News</a>
-        </h1>
-        <nav>
-            <button id="logout" class="btn-no-style">logout</button>
-            <a href="/login">login</a>
-        </nav>
-        
+<Body>
+      <header>
+          <h1>reCOMmend</h1>
+          <div class="topnav">
+            
+              <nav>
+                  <button id="logout" class="btn-no-style">logout</button>
+                
+              </nav>
+            </div>
         </header>
+        
+        <!--Search bar starts-->
+        <div class="container">
+          <form action="" class="search-form">
+            <input id="query-box" type="text" placeholder="search recommendations" name="q"/>
+            <select id="type-box">
+              <option value="" disabled selected hidden>Select a Type</option>
+              <option value="movies">Movies</option>
+              <option value="games">Games</option>
+              <option value="shows">Shows</option>
+              <option value="podcasts">Podcasts</option>
+              <option value="books">Books</option>
+              <option value="authors">Authors</option>
+              <option value="music">Music</option>
+            </select>
+            <button id="searchBtn" type="submit"><img src=""/></button>
+          </form>
+        </div>
+ 
+        <!--Search bar ends-->
+  {{#if searchHistory.length}}
+     
+  <section>
+    <ul class="post-list">    
+      {{#each searchHistory as |search|}} 
+    <li>
+        <div class="search-item">
+          <h4>{{ keyword}}</h4>
+          {{#if comment}}
+          <h5>{{comment.comment}}</h5>
+          {{/if}}
+        </div>
+    </li>
+    {{/each}}
+    </ul>
+  </section>
+  {{/if}}
 
-<ol class="post-list">
-  {{#each posts as |post|}}
-  <li>
-    <article class="post">
-      <div class="title">
-        <a href="{{post.post_url}}" target="_blank">{{post.title}}</a>
-        <span>({{post.post_url}})</span>
-      </div>
-      <div class="meta">
-        {{post.vote_count}} point(s) by {{post.user.username}} on
-        {{post.created_at}}
-        |
-        <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
-      </div>
-    </article>
-  </li>
-  {{/each}}
-</ol>End of code snippet
+</Body>

@@ -27,7 +27,14 @@ Comment.init(
             references: {
                 model: 'user', key:'id'
             }
+        },
+        search_id: {
+            type: DataTypes.INTEGER,
+            references:{
+                model:'search', key: 'id'
+            }
         }
+        
     },
     {
         sequelize,

@@ -12,13 +12,14 @@ router.get('/',(req,res)=>{
     });
 });
 
-router.post('/', withAuth, (req,res)=>{
+router.post('/', (req,res)=>{
     if (req.session){    
         Search.create({
             keyword: req.body.query,
             user_id: req.session.user_id
         })
         .then(dbSearchData=> res.json(dbSearchData))
+        console.log(dbSearchData)
         .catch(err => {
             console.log(err);
             res.status(400).json(err);

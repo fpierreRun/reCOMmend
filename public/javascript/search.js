@@ -1,11 +1,11 @@
 async function searchFormSubmitHandler(event) {
     event.preventDefault();
-
+    console.log('test')
     const key ='439107-Reccomen-KF6ZAIUS'
     const query = document.querySelector('#query-box').value.trim();
-    const type = document.querySelector('#type-box').value.trim();
+    // const type = document.querySelector('#type-box').value.trim(); + '&type=' + type 
     
-    const response = await fetch('https://tastedive.com/api/similar?q=' + query + '&type=' + type + '&info=1&k='+ key)
+    const response = await fetch('https://tastedive.com/api/similar?q=' + query + '&info=1&k='+ key)
          // check the response status
         if (response.ok) {
             console.log('success' + response);
@@ -29,4 +29,4 @@ async function searchFormSubmitHandler(event) {
     
 };
 
-document.querySelector('.search-form').addEventListener('submit', signupFormHandler);
+document.querySelector('#searchBtn').addEventListener('submit', searchFormSubmitHandler);
