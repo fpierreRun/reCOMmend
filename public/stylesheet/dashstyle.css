@@ -15,6 +15,9 @@
       background-color:var(--background2);
   }
   
+  .clearfix::after {
+    overflow: auto;
+}
   body, html {
     height: 100%;
     padding: 0;
@@ -112,12 +115,18 @@ color: var(--primary-color);
   header {
     border-bottom: 1px solid #ccc;
     display: flex;
+    flex-wrap: wrap ;
     justify-content: space-between;
     align-items: center;
     padding: 0 1%;
     color: #fff5eb;
     background-color: var(--tertiary-color);
   }
+
+section {
+    display: flex;
+        flex-wrap: wrap;
+}
 
   h1 {
     font-size: 50px;
@@ -221,3 +230,13 @@ color: var(--primary-color);
     font-size: 100%;
   }
 
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+  @media screen and (max-width: 980px) {
+
+    header, h1 {
+        font-size: 100%;
+        color: white;
+      }
+
+
+  }
