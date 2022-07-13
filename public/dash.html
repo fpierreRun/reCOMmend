@@ -13,7 +13,6 @@
       <header>
           <h1>reCOMmend</h1>
           <div class="topnav">
-            
               <nav>
                   <button id="logout" class="btn-no-style">logout</button>
                 
@@ -25,34 +24,30 @@
         <div class="container">
           <form action="" class="search-bar">
             <input type="text" placeholder="search recommendations" name="q"/>
-            <button type="submit"><img src=""/></button>
+            <button type="submit" class="search-btn"><img src=""/></button>
           </form>
         </div>
  
         <!--Search bar ends-->
-        <h4>Previous Search Results</h4>
-  <section>
-    
-    <ol>
-    {{#each posts as |post|}}
-    <li>
-      <article class="post">
-        <div class="title">
-          <a href="{{post.post_url}}" target="_blank">{{post.title}}</a>
-          <span>({{post.post_url}})</span>
-        </div>
+        <h2>Previous Search Results</h2>
 
-        <div class="meta">
-          {{post.vote_count}} point(s) by {{post.user.username}} on
-          {{post.created_at}}
-          |
-          <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
-        </div>
 
-      </article>
-    </li>
-    {{/each}}
-    </ol>
+  <!--Brief searched results-->
+    <section class="results-form">
+    <div>
+      <h3>Title: </h3>
+      {{#each post.comments}}
+  </div>
+  <div>
+      <h3>Type: </h3>
+      {{#each post.comments}}
+  </div>
+  <h3> Comments</h3>
+  <textarea
+            readonly
+            id="password"
+            aria-label="Generated comments"
+          ></textarea>
   </section>
 
 </Body>
