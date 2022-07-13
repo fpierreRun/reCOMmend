@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reCOMmend</title>
+  <link rel="stylesheet" href="../public/stylesheet/dashstyle.css">
+</head>
+
+
+<Body>
+      <header>
+          <h1>reCOMmend</h1>
+          <div class="topnav">
+            
+              <nav>
+                  <button id="logout" class="btn-no-style">logout</button>
+                
+              </nav>
+            </div>
+        </header>
+        
+        <!--Search bar starts-->
+        <div class="container">
+          <form action="" class="search-bar">
+            <input type="text" placeholder="search recommendations" name="q"/>
+            <button type="submit"><img src=""/></button>
+          </form>
+        </div>
+ 
+        <!--Search bar ends-->
+        
+  <section>
+    <ol class="post-list">
+    {{#each posts as |post|}}
+    <li>
+      <article class="post">
+        <div class="title">
+          <a href="{{post.post_url}}" target="_blank">{{post.title}}</a>
+          <span>({{post.post_url}})</span>
+        </div>
+
+        <div class="meta">
+          {{post.vote_count}} point(s) by {{post.user.username}} on
+          {{post.created_at}}
+          |
+          <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
+        </div>
+
+      </article>
+    </li>
+    {{/each}}
+    </ol>End of code snippet
+  </section>
+
+</Body>
+
+</html>
