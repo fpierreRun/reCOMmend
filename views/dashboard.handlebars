@@ -1,18 +1,6 @@
-<Body>
-      <header>
-          <h1>reCOMmend</h1>
-          <div class="topnav">
-            
-              <nav>
-                  <button id="logout" class="btn-no-style">logout</button>
-                
-              </nav>
-            </div>
-        </header>
-        
         <!--Search bar starts-->
         <div class="container">
-          <form action="" class="search-form">
+          <form action="" class="search-bar">
             <input id="query-box" type="text" placeholder="search recommendations" name="q"/>
             <select id="type-box">
               <option value="" disabled selected hidden>Select a Type</option>
@@ -24,10 +12,11 @@
               <option value="authors">Authors</option>
               <option value="music">Music</option>
             </select>
-            <button id="searchBtn" type="submit"><img src=""/></button>
+            <button id="searchBtn" class="search-btn" type="submit"><img src=""/></button>
           </form>
         </div>
- 
+        <script src="/javascript/logout.js"></script>
+        <script src="/javascript/search.js"></script>
         <!--Search bar ends-->
   {{#if searchHistory.length}}
      
@@ -46,5 +35,3 @@
     </ul>
   </section>
   {{/if}}
-
-</Body>

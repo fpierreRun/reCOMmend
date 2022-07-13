@@ -4,109 +4,162 @@
   --tertiary-color: #41BF78;
   --background1: #2CBF6C;
   --background2: #F2F2F2;
-}
-
-
-* {
+ }
+  
+ .clearfix::after {
+  overflow: auto;
+ }
+  
+ * {
     box-sizing: border-box;
   }
-  
-  body {
-    background-color:var(--tertiary-color);
-    
+   body {
+    background-color:var(--background2);
+   
   }
-  
-  body, html {
+   body, html {
     height: 100%;
     padding: 0;
     margin: 0;
     font-family: sans-serif;
     color: #333;
   }
-
+  
    .wrap {
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-size: 39px;
    }
-.section-color {
-background:var(--background2);
-}
+  
+   header {
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1%;
+    color: #fff5eb;
+    background-color: var(--tertiary-color);
+  }
+  
+  
+ .section-color {
+ background:var(--background2);
+ }
   a {
     text-decoration: none;
     color: #225ca3;
     font-weight: bold;
     transition: color .1s;
   }
-  
-  a:hover {
+   a:hover {
     color: #3486eb;
   }
-  
-  button {
+   button {
     background-color:var(--primary-color);
     border: 0;
-    padding: 1%;
+    padding: 10%;
     color: white;
     font-weight: bold;
     transition: background-color .1s;
     cursor: pointer;
     border-radius: 5px;
-    margin-bottom: 20px;
+    width: 100%;
     
   }
-  
-  button:hover {
+   button:hover {
     background-color:var(--secondary-color);
   }
-  
-
-  
-  textarea, input {
+   .search-btn {
+    margin-bottom: 0px;
+    width: 0%;
+    border-radius: 100px;
+    height: 10px;
+    padding: 30px;
+  }
+   textarea, input {
     padding: .5%;
     border-radius: 5px;
     border: 1px solid #ccc;
   }
   
-
+  textarea:focus, input:focus {
+    outline: none;
+    border: 1px solid #3486eb;
+  }
+   textarea {
+    min-width: 40%;
+    min-height: 100px;
+  }
+  
+  .container {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+ }
+  
+ .container button {
+  background-color: var(--secondary-color);
+ }
+  
+ .form-btn {
+ width: 50%;
+ }
   
   
+ /** Search bar **/
+ .search-bar{
+ width: 100%;
+ max-width: 700px;
+ background: white;
+ display: flex;
+ align-items: center;
+ border-radius: 60px;
+ padding: 10px 20px;
+ margin-top: 30px ;
+ }
   
-  form  div {
+ .search-bar input{
+ background: transparent;
+ flex: 1;
+ border:0;
+ outline: none;
+ padding: 5px;
+ font-size: 25px;
+ color: var(--primary-color);
+ }
+  
+   form  div {
     margin-bottom: 2%;
     padding: 0px 20px 0px 20px;
   }
-  
- form {
-background:white;
-border-radius: 10px;
-box-shadow: 0px 3px 6px #00000029;
-padding:20px;
-margin: 100px;
+  form {
+ background:white;
+ border-radius: 10px;
+ box-shadow: 0px 3px 6px #00000029;
+ padding:20px;
+ margin: 100px;
  }
-  
- ::placeholder {
+  ::placeholder {
    color: rgb(197, 197, 197);
  }
-  
-  h1 {
+   h1 {
     font-size: 50px;
     color: white;
   }
-
-.h1-color {
-  color:var(--background1);
-}
   
-
+ .h1-color {
+  color:var(--background1);
+ }
+  
   .h4-color {
     color:var(--primary-color);
     font-size: 30px;
     font-weight: normal;
       }
-    
-
+   
+  
   .btn-no-style {
     background: none;
     border: none;
@@ -119,17 +172,46 @@ margin: 100px;
     transition: color .1s;
     margin-left: 16px;
   }
-  
   .btn-no-style:hover {
     background: none;
     color: #3486eb;
   }
   
-
   footer {
     border-top: 1px solid #ccc;
     padding: 1%;
     font-size: 100%;
     background:var(--background2);
   }
-
+  
+  a {
+    text-decoration: none;
+    color: #225ca3;
+    font-weight: bold;
+    transition: color .1s;
+    font-size: 20px;
+  }
+  
+  a:hover {
+    color: #3486eb;
+  }
+  
+  
+  .comment {
+    padding: 1%;
+    margin-bottom: 1%;
+  }
+  .comment:nth-child(odd) {
+    background-color: #fff5eb;
+  }
+  
+  /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+  @media screen and (max-width: 980px) {
+  
+    header, h1 {
+        font-size: 100%;
+        color: white;
+      }
+    }
+ 
+ 

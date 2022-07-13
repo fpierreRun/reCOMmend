@@ -3,7 +3,7 @@ async function searchFormSubmitHandler(event) {
     console.log('test')
     const key ='439107-Reccomen-KF6ZAIUS'
     const query = document.querySelector('#query-box').value.trim();
-    // const type = document.querySelector('#type-box').value.trim(); + '&type=' + type 
+    const type = document.querySelector('#type-box').value.trim(); + '&type=' + type 
     
     const response = await fetch('https://tastedive.com/api/similar?q=' + query + '&info=1&k='+ key)
          // check the response status
@@ -29,4 +29,4 @@ async function searchFormSubmitHandler(event) {
     
 };
 
-document.querySelector('#searchBtn').addEventListener('submit', searchFormSubmitHandler);
+document.querySelector('#searchBtn').addEventListener('click', searchFormSubmitHandler);

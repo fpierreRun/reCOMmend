@@ -9,13 +9,15 @@
 </head>
 
 <body>
-    <div>
+    <header>
         <h1>reCOMmend</h1>
-        <h4>Get reommendations on what you like</h4>
-    </div>
-    <div class="wrapper">
-        <header>
-        {{!-- {{{ header }}} --}}
+        {{#if loggedIn}}
+        <div class="topnav">            
+            <nav>
+                <button id="logout" class="btn-no-style">logout</button>                    
+            </nav>
+        </div>
+        {{/if}}
         </header>
         <main>
         {{{ body }}}
