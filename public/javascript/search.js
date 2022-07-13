@@ -6,21 +6,14 @@
 async function fecthAPI(keyword){
     const type = document.querySelector('#type-box').value.trim(); 
     const key ='439107-Reccomen-KF6ZAIUS'
-    const response = await fetch('/searchresults',{
-        method: 'post',
-        body: JSON.stringify({
-            type,
-            key,
-            keyword            
-        })
-    })
-    if (response.ok) {
-        console.log('success');
-    } else {
-        alert(response.statusText);
+    try{  
+        const response= await fetch('/searchresults?q=' + keyword + '&type=' + type+ '&info=1&k='+key)
+
+        console.log(await response.json())
+    } catch(e){ 
+        console.log(e)
     }
 }
-
 async function searchFormSubmitHandler(event) {
     event.preventDefault();
     
