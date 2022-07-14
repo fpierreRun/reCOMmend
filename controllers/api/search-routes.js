@@ -13,17 +13,17 @@ router.get('/',(req,res)=>{
 });
 
 router.post('/', (req,res)=>{
-       
-        Search.create({
-            keyword: req.body.keyword,
-            user_id: req.session.user_id
-        })
-        .then(dbSearchData=> res.json(dbSearchData))
-        
-        .catch(err => {
-            console.log(err);
-            res.status(400).json(err);
-        });
+    
+    Search.create({
+        keyword: req.body.keyword,
+        user_id: req.session.user_id
+    })
+    .then(dbSearchData=> res.json(dbSearchData))
+    
+    .catch(err => {
+        console.log(err);
+        res.status(400).json(err);
+    });
     
 })
 

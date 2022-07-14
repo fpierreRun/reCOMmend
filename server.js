@@ -31,7 +31,7 @@ app.set('view engine', 'handlebars');
 app.get('/searchresults', (req, res) =>{ 
     // res.json('you win')
     // console.log('success!')
-    const keyword = req.query.q
+    /*const keyword = req.query.q
     const type = req.query.type
     const k = req.query.k
     
@@ -49,7 +49,7 @@ app.get('/searchresults', (req, res) =>{
         // res.send('hello')
         }).catch(err => {
         res.send('errr!!!')
-        })
+        })*/
 })
 
 // turn on routes

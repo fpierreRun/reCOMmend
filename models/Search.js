@@ -34,7 +34,7 @@ Search.init(
         timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName: 'keyword'
+        modelName: 'search'
     },
 );
 
