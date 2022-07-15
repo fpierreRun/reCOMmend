@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
+
 const sequelize = require('../config/connection');
 
 //create user model
@@ -33,10 +34,9 @@ Search.init(
         timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName: 'search'
+        modelName: 'keyword'
     },
 );
-
 
 
 module.exports = Search;

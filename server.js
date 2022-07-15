@@ -6,6 +6,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const helpers = require('./utils/helpers');
 const hbs = exphbs.create({helpers});
+const axios = require('axios')
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -27,6 +28,29 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+app.get('/searchresults', (req, res) =>{ 
+    // res.json('you win')
+    // console.log('success!')
+    const keyword = req.query.q
+    const type = req.query.type
+    const k = req.query.k
+    
+    const api = 'https://tastedive.com/api/similar?q=' + keyword + '&type=' + type+ '&info=1&k='+k
+    console.log(req.query)
+    console.log(api)
+    const response= axios(api)
+        .then(response => {
+        console.log(response.data)
+        
+        res.render('searchresults',{
+            response
+
+        })
+        // res.send('hello')
+        }).catch(err => {
+        res.send('errr!!!')
+        })
+})
 
 // turn on routes
 app.use(routes);
