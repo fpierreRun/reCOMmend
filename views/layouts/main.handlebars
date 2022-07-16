@@ -14,17 +14,21 @@
         {{#if loggedIn}}
         <div class="topnav">            
             <nav>
-                <button id="logout" class="btn-no-style">logout</button>                    
+                <button id="logout" class="btn-no-style">logout</button>
+                <button href="../dashboard.handlebars" class="btn-no-style"> Go Back Dashboard </button>                      
             </nav>
         </div>
         {{/if}}
         </header>
+        
         <main>
         {{{ body }}}
         </main>
+
          <footer>
       &copy; Group 7, Inc.
         </footer>
+
     </div>
     
 </body>
