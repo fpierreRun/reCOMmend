@@ -7,22 +7,24 @@
   
 </header>
 
- 
-  <form>
+   <form class="Form-deet">
  
        <div>
-           <h3>Title: </h3>
-           {{#each post.comments}}
+          
+           {{Result.Name}}
        </div>
        <div>
-           <h3>Type: </h3>
-           {{#each post.comments}}
+          
+           {{Result.wTeaser}}
        </div>
+       <div>
+          <a href={{Result.wUrl}}>{{Result.name}}</a>
+     </div>
+    
        <div>
          <textarea name="comment-body"></textarea>
        </div>
     
-       <div>
-         <button type="submit" class="form-btn">add comment</button>
-       </div>
+         <button type="submit" >ADD COMMENT</button>
+     
      </form>
