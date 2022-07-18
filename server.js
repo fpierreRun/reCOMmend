@@ -42,6 +42,7 @@ app.get('/searchresults', (req, res) =>{
         .then(response => {
         console.log(response.data)
 
+
         const searchResults = response.get({ plain: true });
         location.replace('/searchresults')
         res.render('searchresults',{
@@ -50,6 +51,8 @@ app.get('/searchresults', (req, res) =>{
 
         })
         res.send('hello')
+
+
         }).catch(err => {
         res.send(err)
         })
