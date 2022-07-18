@@ -13,9 +13,9 @@ router.get('/',(req,res)=>{
 });
 
 router.post('/', (req,res)=>{
-       
+    const keyword = req.body.keyword.replace('+',' ')
         Search.create({
-            keyword: req.body.keyword,
+            keyword: keyword,
             user_id: req.session.user_id
         })
         .then(dbSearchData=> res.json(dbSearchData))

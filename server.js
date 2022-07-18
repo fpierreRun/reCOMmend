@@ -41,14 +41,17 @@ app.get('/searchresults', (req, res) =>{
     const response= axios(api)
         .then(response => {
         console.log(response.data)
-        
+
+        const searchResults = response.get({ plain: true });
+        location.replace('/searchresults')
         res.render('searchresults',{
-            response
+            searchResults,
+            loggedIn: req.session.loggedIn
 
         })
-        // res.send('hello')
+        res.send('hello')
         }).catch(err => {
-        res.send('errr!!!')
+        res.send(err)
         })
 })
 

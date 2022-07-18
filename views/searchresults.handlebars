@@ -1,30 +1,17 @@
-<body>
-   <header class="wrap">
-     <Nav>
-       <button href="../public/dash.html" class="btn-no-style">Go to Dashboard</button>
-   </Nav>
-   <h1>Search Results</h1>
-  
-</header>
-
-   <form class="Form-deet">
- 
-       <div>
-          
-           {{Result.Name}}
-       </div>
-       <div>
-          
-           {{Result.wTeaser}}
-       </div>
-       <div>
-          <a href={{Result.wUrl}}>{{Result.name}}</a>
-     </div>
-    
-       <div>
-         <textarea name="comment-body"></textarea>
-       </div>
-    
-         <button type="submit" >ADD COMMENT</button>
-     
-     </form>
+<form>
+  <div>
+    <h3>Results</h3>
+{{#each searchResults as |Result|}}
+  </div>
+  <div>
+    {{Result.Name}}
+    {{Result.wTeaser}}
+    <a href={{Result.wUrl}}>{{Result.name}}</a>
+  </div>
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+  <div>
+    <button type="submit" class="form-btn">add comment</button>
+  </div>
+</form>
