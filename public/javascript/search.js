@@ -10,6 +10,13 @@ async function fecthAPI(keyword){
         const response= await fetch('/searchresults?q=' + keyword + '&type=' + type+ '&info=1&k='+key)
 
         console.log(await response.json())
+        const [searchResults] = response.json.get({ plain: true });
+        location.replace('/searchresults')
+        res.render('searchresults',{
+            searchResults,
+            loggedIn: req.session.loggedIn
+
+        })
     } catch(e){ 
         console.log(e)
     }
