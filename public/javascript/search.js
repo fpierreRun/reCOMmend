@@ -17,7 +17,8 @@ async function fecthAPI(keyword){
 async function searchFormSubmitHandler(event) {
     event.preventDefault();
     
-    const keyword = document.querySelector('#query-box').value.trim();
+    const keyword = document.querySelector('#query-box').value.trim().replace(' ','+');
+    
     console.log(keyword)
     if (keyword){
         const response = await fetch('/api/search',{
