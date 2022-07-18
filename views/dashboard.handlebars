@@ -1,7 +1,10 @@
         <!--Search bar starts-->
         <div class="container">
+
           <form action="" class="search-bar">
             <input id="query-box" type="text" placeholder="search recommendations" name="q"/>
+            
+            <!--Drop down for selecting type-->
             <select id="type-box">
               <option value="" disabled selected hidden>Select a Type</option>
               <option value="movies">Movies</option>
@@ -12,7 +15,9 @@
               <option value="authors">Authors</option>
               <option value="music">Music</option>
             </select>
-            <button id="searchBtn" class="search-btn" type="submit"><img src=""/></button>
+
+            <button type="submit"> <i class="material-icons">search</i> </button>
+
           </form>
         </div>
         <script src="/javascript/logout.js"></script>
