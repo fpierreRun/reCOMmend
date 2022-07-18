@@ -13,6 +13,8 @@
  * {
     box-sizing: border-box;
   }
+
+
    body {
     background-color:var(--background2);
    
@@ -27,9 +29,9 @@
   
    .wrap {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    font-size: 39px;
+    font-size: 30px;
    }
   
 
@@ -41,11 +43,12 @@
     background-color: var(--tertiary-color);
   }
  
-  header h1 {
-    margin-right: 50% ;
-  
-  }
-
+  header img {
+    min-width: 200px;
+    max-width: 300pt;
+    margin: 20px 0px 20px 20px;
+   }
+   
    
  header nav {
   display: flex;
@@ -54,6 +57,13 @@
     
    }
   
+
+ 
+header button {
+  margin-right: 40px;
+  }
+  
+
     /** Header Styling ends **/ 
   
 .section-color {
@@ -71,9 +81,12 @@
     font-weight: bold;
     transition: color .1s;
   }
+
    a:hover {
     color:var(--secondary-color);
   }
+
+
    button {
     background-color:var(--primary-color);
     border: 0;
@@ -121,18 +134,24 @@
  }
   
  .container button {
+ background-color:var(--secondary-color);
+ margin-bottom: 0px;
+   width: 60px;
+   border-radius: 50%;
+   height: 60px;
+   padding: 10px;
+   cursor: pointer;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+  
+}
+
+.container button:hover {
   background-color:var(--tertiary-color);
-  margin-bottom: 0px;
-    width: 60px;
-    border-radius: 50%;
-    height: 60px;
-    padding: 10px;
-    cursor: pointer;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
  }
+ 
  
  .container form {
   width: 100%;
@@ -155,6 +174,14 @@
   color: var(--primary-color);
   }
  
+  .container select {
+    margin-right: 50px;
+     border: none;
+     font-size: 20px;
+     color: var(--background1);
+    }
+    
+
   .container img {
     width: 25px;
     font-size: 25px;
